@@ -47,5 +47,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: rust_pgp_decryptor_widget-${{ github.ref_name }}
-        path: target/release/rust_pgp_decryptor_widget # Adjust if your executable name is different
+        path: target/release/rust_pgp_decryptor_widget
         retention-days: 7 # Keep the artifact for 7 days
