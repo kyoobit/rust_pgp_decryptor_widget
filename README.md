@@ -2,13 +2,23 @@
 
 A silly widget to handle decryption of PGP data with sensitive values in text files, like YAML configs.
 
-## Install Rust (as needed)
+## Download a release
+https://github.com/kyoobit/rust_pgp_decryptor_widget/releases
+
+```shell
+mkdir -p $HOME/bin && cd $HOME/bin
+curl -OL https://github.com/kyoobit/rust_pgp_decryptor_widget/releases/download/v0.1.0/rust_pgp_decryptor_widget-v0.1.0.zip
+unzip rust_pgp_decryptor_widget-v0.1.0.zip && rm rust_pgp_decryptor_widget-v0.1.0.zip
+ln -s $HOME/bin/rust_pgp_decryptor_widget $HOME/bin/pgp_decryptor
+```
+
+## Build from source
+
+Install Rust (as needed)
 https://www.rust-lang.org/tools/install
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
-
-# Build and Use
 
 Ensure the latest code is available
 ```shell
@@ -17,13 +27,19 @@ git pull
 ```
 Build the binary
 ```shell
-make update
 make build
+```
+or
+```shell
+cargo build --release
 ```
 Use an alias for convenience
 ```shell
 alias pgp_decryptor='$HOME/repos/rust/rust_pgp_decryptor_widget/target/release/rust_pgp_decryptor_widget $*'
 ```
+
+## Use
+
 Example usage
 ```shell
 pgp_decryptor --help
